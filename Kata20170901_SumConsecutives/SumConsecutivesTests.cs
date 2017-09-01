@@ -52,30 +52,22 @@ namespace Kata20170901_SumConsecutives
         public List<int> SumConsecutives(List<int> list)
         {
             var result = new List<int>();
-            var sumOfnum = 0;
-            for (int i = 0; i < list.Count; i++)
+            var sum = 0;
+            var lastItem = list[0];
+            foreach (var i in list)
             {
-                if (i + 1 < list.Count && list[i] == list[i + 1])
+                if (lastItem == i)
                 {
-                    if (sumOfnum == 0)
-                    {
-                        sumOfnum = list[i];
-                    }
-                    sumOfnum += list[i];
+                    sum += lastItem;
                 }
                 else
                 {
-                    if (sumOfnum != 0)
-                    {
-                        result.Add(sumOfnum);
-                        sumOfnum = 0;
-                    }
-                    else
-                    {
-                        result.Add(list[i]);
-                    }
+                    result.Add(sum);
+                    sum = lastItem = i;
                 }
             }
+
+            result.Add(sum);
 
             return result;
         }
