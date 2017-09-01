@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,7 +12,7 @@ namespace Kata20170901_SumConsecutives
         [TestMethod]
         public void input_1_2_3_should_return_1_2_3()
         {
-            SumConsecutivesShouldBe(new List<int> {1, 2, 3}, new List<int> {1, 2, 3});
+            SumConsecutivesShouldBe(new List<int> { 1, 2, 3 }, new List<int> { 1, 2, 3 });
         }
 
         [TestMethod]
@@ -32,6 +33,12 @@ namespace Kata20170901_SumConsecutives
             SumConsecutivesShouldBe(new List<int> { 3, 2 }, new List<int> { 1, 1, 1, 2 });
         }
 
+        [TestMethod]
+        public void input_1_1_1_0_2_2_should_return_3_0_4()
+        {
+            SumConsecutivesShouldBe(new List<int> { 3, 0, 4 }, new List<int> { 1, 1, 1, 0, 2, 2 });
+        }
+
         private static void SumConsecutivesShouldBe(List<int> expected, List<int> list)
         {
             var consecutives = new Consecutives();
@@ -45,12 +52,12 @@ namespace Kata20170901_SumConsecutives
         public List<int> SumConsecutives(List<int> list)
         {
             var result = new List<int>();
-            int? sumOfnum = null;
+            var sumOfnum = 0;
             for (int i = 0; i < list.Count; i++)
             {
                 if (i + 1 < list.Count && list[i] == list[i + 1])
                 {
-                    if (!sumOfnum.HasValue)
+                    if (sumOfnum == 0)
                     {
                         sumOfnum = list[i];
                     }
@@ -58,10 +65,10 @@ namespace Kata20170901_SumConsecutives
                 }
                 else
                 {
-                    if (sumOfnum.HasValue)
+                    if (sumOfnum != 0)
                     {
-                        result.Add(sumOfnum.Value);
-                        sumOfnum = null;
+                        result.Add(sumOfnum);
+                        sumOfnum = 0;
                     }
                     else
                     {
