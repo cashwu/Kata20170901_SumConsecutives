@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata20170901_SumConsecutives", "Kata20170901_SumConsecutives\Kata20170901_SumConsecutives.csproj", "{50CCE12A-FAFC-4B7C-87F6-B9A1849C568F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50CCE12A-FAFC-4B7C-87F6-B9A1849C568F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CCE12A-FAFC-4B7C-87F6-B9A1849C568F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CCE12A-FAFC-4B7C-87F6-B9A1849C568F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CCE12A-FAFC-4B7C-87F6-B9A1849C568F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14D36C6C-2FE7-4A3C-8A57-A0DE0199B0B2}
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = 641c099a-3fda-4844-8c66-79c7ec316d14
+	EndGlobalSection
+EndGlobal
