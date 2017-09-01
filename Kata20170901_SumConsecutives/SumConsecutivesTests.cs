@@ -26,6 +26,12 @@ namespace Kata20170901_SumConsecutives
             SumConsecutivesShouldBe(new List<int> { 2, 4 }, new List<int> { 1, 1, 2, 2 });
         }
 
+        [TestMethod]
+        public void input_1_1_1_2_should_return_3_2()
+        {
+            SumConsecutivesShouldBe(new List<int> { 3, 2 }, new List<int> { 1, 1, 1, 2 });
+        }
+
         private static void SumConsecutivesShouldBe(List<int> expected, List<int> list)
         {
             var consecutives = new Consecutives();
@@ -44,7 +50,10 @@ namespace Kata20170901_SumConsecutives
             {
                 if (i + 1 < list.Count && list[i] == list[i + 1])
                 {
-                    sumOfnum = list[i];
+                    if (!sumOfnum.HasValue)
+                    {
+                        sumOfnum = list[i];
+                    }
                     sumOfnum += list[i];
                 }
                 else
