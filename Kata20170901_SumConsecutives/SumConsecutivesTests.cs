@@ -38,17 +38,30 @@ namespace Kata20170901_SumConsecutives
     {
         public List<int> SumConsecutives(List<int> list)
         {
-            if (list.Count == 4 && list[0] == list[1] && list[2] == list[3])
+            var result = new List<int>();
+            int? sumOfnum = null;
+            for (int i = 0; i < list.Count; i++)
             {
-                return new List<int>{ list[0] + list[1], list[2] + list[3] };
+                if (i + 1 < list.Count && list[i] == list[i + 1])
+                {
+                    sumOfnum = list[i];
+                    sumOfnum += list[i];
+                }
+                else
+                {
+                    if (sumOfnum.HasValue)
+                    {
+                        result.Add(sumOfnum.Value);
+                        sumOfnum = null;
+                    }
+                    else
+                    {
+                        result.Add(list[i]);
+                    }
+                }
             }
 
-            if (list[0] == list[1])
-            {
-                return new List<int>{ list[0] + list[1], list[2] };    
-            }
-
-            return list;
+            return result;
         }
     }
 }
